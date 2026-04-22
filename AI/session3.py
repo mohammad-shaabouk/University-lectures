@@ -1,3 +1,5 @@
+# التمرين الثاني 
+
 from collections import deque
 
 # تعريف الشبكة
@@ -38,7 +40,7 @@ while queue:
         ni = current[0] + d[0]
         nj = current[1] + d[1]
 
-        if 0 <= ni < rows and 0 <= nj < cols:
+        if rows > ni >= 0 and cols > nj >= 0:
             if grid[ni][nj] != '#' and (ni, nj) not in visited:
                 queue.append((ni, nj))
                 visited.add((ni, nj))
@@ -54,15 +56,15 @@ path.append(start)
 path.reverse()
 
 # طباعة النتائج
-print("ترتيب دخول العقد إلى الطابور :")
+print(":ترتيب دخول العقد إلى الطابور")
 print(queue_order)
 
-print("\nالمسار النهائي:")
+print("\n:المسار النهائي")
 print(path)
 
-print("\nعدد الحركات:")
+print("\n:عدد الحركات")
 print(len(path) - 1)
 
-print("\nشجرة البحث :")
+print("\n:(Parent لكل عقدة) شجرة البحث")
 for child in parent:
     print(f"{parent[child]} -> {child}")
